@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "title": "Sahra åker till badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset.jpeg",
+    "title": "På ÄggJakt",
+    "url": "../SahrasPhotos/host/aggJakt.jpeg",
     "details": {
-      "description": "Hon var i skogen.",
+      "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
       "dateTaken": "2024-07-15",
       "photographer": "Jinni"
@@ -12,8 +12,8 @@
   },
   {
     "id": 2,
-    "title": "Sahra åker till badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset2.jpeg",
+    "title": "På ÄggJakt",
+    "url": "../SahrasPhotos/host/aggJakt1.jpeg",
     "details": {
       "description": "Hon var på vägen till badhuset.",
       "location": "Myran avdelning, Borås Förskola",
@@ -23,8 +23,8 @@
   },
   {
     "id": 3,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset3.jpeg",
+    "title": "På ÄggJakt",
+    "url": "../SahrasPhotos/host/aggJakt2.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -34,8 +34,8 @@
   },
   {
     "id": 4,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset4.jpeg",
+    "title": "Påpaskpyssel",
+    "url": "../SahrasPhotos/host/paskpyssel.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -45,8 +45,8 @@
   },
   {
     "id": 5,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset5.jpeg",
+    "title": "Påpaskpyssel",
+    "url": "../SahrasPhotos/host/paskpyssel2.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -56,8 +56,8 @@
   },
   {
     "id": 6,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset6.jpeg",
+    "title": "Skapar Sin Vän",
+    "url": "../SahrasPhotos/host/skaparsinVan.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -67,8 +67,8 @@
   },
   {
     "id": 7,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset11.jpeg",
+    "title": "Skapar Sin Vän",
+    "url": "../SahrasPhotos/host/skaparsinVan2.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -78,8 +78,8 @@
   },
   {
     "id": 8,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset8.jpeg",
+    "title": "Skapar Sin Vän",
+    "url": "../SahrasPhotos/host/skaparsinVan3.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -89,8 +89,8 @@
   },
   {
     "id": 9,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset9.jpeg",
+    "title": "Skapar Sin Vän",
+    "url": "../SahrasPhotos/host/skaparsinVan4.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -100,8 +100,8 @@
   },
   {
     "id": 10,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset10.jpeg",
+    "title": "Skapar Sin Vän",
+    "url": "../SahrasPhotos/host/skaparsinVan5.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -111,8 +111,30 @@
   },
   {
     "id": 11,
-    "title": "På Badhuset",
-    "url": "../SahrasPhotos/sommar/badhuset7.jpeg",
+    "title": "Väckar isbjörnen",
+    "url": "../SahrasPhotos/host/vackaIsBjorn.jpeg",
+    "details": {
+      "description": "Hon var i skogen i posken och leter efter ägg.",
+      "location": "Myran avdelning, Borås Förskola",
+      "dateTaken": "2024-07-15",
+      "photographer": "Jinni"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Varnar om isbjörnen",
+    "url": "../SahrasPhotos/host/varningMotIsbjorn.jpeg",
+    "details": {
+      "description": "Hon var i skogen i posken och leter efter ägg.",
+      "location": "Myran avdelning, Borås Förskola",
+      "dateTaken": "2024-07-15",
+      "photographer": "Jinni"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Lekar med vänner.",
+    "url": "../SahrasPhotos/host/lekar.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
