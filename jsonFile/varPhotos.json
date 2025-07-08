@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "På ÄggJakt",
-    "url": "../SahrasPhotos/host/aggJakt.jpeg",
+    "title": "På djurgården",
+    "url": "../SahrasPhotos/var/djurgarden.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",
@@ -12,8 +12,8 @@
   },
   {
     "id": 2,
-    "title": "På ÄggJakt",
-    "url": "../SahrasPhotos/host/aggJakt1.jpeg",
+    "title": "På djurgården",
+    "url": "../SahrasPhotos/var/djurgarden2.jpeg",
     "details": {
       "description": "Hon var på vägen till badhuset.",
       "location": "Myran avdelning, Borås Förskola",
@@ -23,8 +23,8 @@
   },
   {
     "id": 3,
-    "title": "På ÄggJakt",
-    "url": "../SahrasPhotos/host/aggJakt2.jpeg",
+    "title": "Djurgården",
+    "url": "../SahrasPhotos/var/djurgarden3.jpeg",
     "details": {
       "description": "Hon var i skogen i posken och leter efter ägg.",
       "location": "Myran avdelning, Borås Förskola",

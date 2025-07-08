@@ -1,13 +1,50 @@
-const btn = document.getElementById('loadPhotosBtn');
+
 const container = document.getElementById('photosContainer');
 const ul = document.createElement('ul');
 const imgDetiales = document.querySelector('.detiales');
+// Search photos by title
+let allPhotos = [];
 
-const sommarAktivitet = document.getElementsByClassName("sommarAk");
-const vinterAktivitet = document.getElementsByClassName("vinterAk");
-const hostAktivitet = document.getElementsByClassName("hostAk");
-const varAktivitet = document.getElementsByClassName("varAk");
+// Search input logic
+const searchInput = document.querySelector('.search');
 
+searchInput.addEventListener("input", function (e) {
+  const searchTerm = e.target.value.toLowerCase();
+  ul.innerHTML = '';
+  const filteredPhotos = allPhotos.filter(photo =>
+    photo.title.toLowerCase().includes(searchTerm)
+
+  );
+
+
+  filteredPhotos.forEach(photo => {
+    const li = document.createElement('li');
+    li.innerHTML = `<img src="${photo.url}" alt="${photo.title}">`;
+    ul.appendChild(li);
+    imgDetiales.innerHTML = `
+        <img src="${photo.url}" alt="${photo.title}">
+        <br>
+        Title: ${photo.title}
+        <br><br>
+        Description: ${photo.details.description}
+      `;
+    li.addEventListener("click", () => {
+      imgDetiales.innerHTML = `
+        <img src="${photo.url}" alt="${photo.title}">
+        <br>
+        Title: ${photo.title}
+        <br><br>
+        Description: ${photo.details.description}
+      `;
+      searchInput.value = ""
+    });
+  });
+  if (!container.contains(ul)) {
+    container.appendChild(ul);
+  }
+});
+
+// Map activity class names to JSON paths
 const activityMap = {
   sommarAk: '../jsonFile/sommarPhotos.json',
   vinterAk: '../jsonFile/vinterPhotos.json',
@@ -15,36 +52,39 @@ const activityMap = {
   varAk: '../jsonFile/varPhotos.json'
 };
 
+// Load photos for a given activity
 const loadPhotos = async (jsonPath) => {
   const response = await fetch(jsonPath);
   const photos = await response.json();
+
+  allPhotos = photos; // Store all loaded photos for searching.
 
   ul.innerHTML = '';
 
   photos.forEach(photo => {
     const li = document.createElement('li');
-    li.innerHTML = `
-                    <img src="${photo.url}" alt="${photo.title}">
-                   `;
+    li.innerHTML = `<img src="${photo.url}" alt="${photo.title}">`;
     ul.appendChild(li);
+
+    // display single big photo with details on right side.
     imgDetiales.innerHTML = `
-               <img src="${photo.url}" alt="${photo.title} ">
-              
-              Title: ${photo.title}
-              <br>
-              <br>
-              Describtion: ${photo.details.description}
+        <img src="${photo.url}" alt="${photo.title}">
+        <br>
+        Title: ${photo.title}
+        <br><br>
+        Description: ${photo.details.description}
       `;
+    // display single big photo with details on right side efter clicked.
     li.addEventListener("click", () => {
       imgDetiales.innerHTML = `
-               <img src="${photo.url}" alt="${photo.title} ">
-              
-              Title: ${photo.title}
-               <br>
-              <br>
-              Describtion: ${photo.details.description}
+        <img src="${photo.url}" alt="${photo.title}">
+        <br>
+        Title: ${photo.title}
+        <br><br>
+        Description: ${photo.details.description}
       `;
-    })
+      searchInput.value = ""
+    });
   });
 
   // Append the ul to the container if not already appended
@@ -57,7 +97,10 @@ const loadPhotos = async (jsonPath) => {
 Object.keys(activityMap).forEach(activityClass => {
   const elements = document.getElementsByClassName(activityClass);
   Array.from(elements).forEach(el => {
-    el.addEventListener('click', () => loadPhotos(activityMap[activityClass]));
+    el.addEventListener('click', () => {
+      loadPhotos(activityMap[activityClass])
+      searchInput.value = ""
+    });
   });
 });
 
@@ -67,11 +110,14 @@ loadPhotos(activityMap.sommarAk);
 // Färgklick – ändra bakgrund på details-panelen
 const colorSwatches = document.querySelectorAll(".color");
 const detailsPanel = document.querySelector(".detailsColors");
-const backgrundColor = document.querySelector(".mainbackgrund");
+const backgrundColor = document.querySelector(".mainBackgrund");
+const inptBC = document.querySelector("#inputBackgrund");
+
 colorSwatches.forEach(swatch => {
   swatch.addEventListener("click", () => {
     const color = window.getComputedStyle(swatch).backgroundColor;
     detailsPanel.style.backgroundColor = color;
     backgrundColor.style.backgroundColor = color;
+    inptBC.style.backgroundColor = color;
   });
 });
