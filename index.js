@@ -142,10 +142,15 @@ musicIcons.forEach(icon => {
         musicPlay[index].pause();
         currentlyPlayingIndex = null;
       } else {
+        // Stoppa och nollställ alla andra ljud
         musicPlay.forEach((audio, i) => {
           audio.pause();
           audio.currentTime = 0;
+          audio.loop = false;
         });
+
+        // Starta och loopa det valda ljudet
+        musicPlay[index].loop = true;
         musicPlay[index].play();
         currentlyPlayingIndex = index;
       }
@@ -160,4 +165,67 @@ const audioContainer = document.getElementById("audioContainer");
 
 toggleIcon.addEventListener("click", function () {
   audioContainer.classList.toggle("toggle");
+});
+
+//LightBox with toggle
+// LightBox with toggle
+const lightBox = document.getElementById("lightBox");
+let lightBoxIndex = 0;
+let lightBoxInterval = null;
+
+// Create lightbox overlay elements
+const lightBoxOverlay = document.createElement("div");
+lightBoxOverlay.classList.add("lightBoxOverlay")
+
+const lightBoxImg = document.createElement("img");
+lightBoxImg.classList.add("lightBoxImg")
+
+const lightBoxTitle = document.createElement("div");
+lightBoxTitle.style.color = "#fff";
+lightBoxTitle.style.marginTop = "20px";
+lightBoxTitle.style.fontSize = "1.2rem";
+lightBoxTitle.style.textAlign = "center";
+
+const closeBtn = document.createElement("button");
+closeBtn.classList.add("closeBtn")
+closeBtn.textContent = "Close";
+
+lightBoxOverlay.appendChild(lightBoxImg);
+lightBoxOverlay.appendChild(lightBoxTitle);
+lightBoxOverlay.appendChild(closeBtn);
+document.body.appendChild(lightBoxOverlay);
+
+function showLightBox(index) {
+  if (!allPhotos.length) return;
+  lightBoxIndex = index % allPhotos.length;
+  const photo = allPhotos[lightBoxIndex];
+  lightBoxImg.src = photo.url;
+  lightBoxImg.alt = photo.title;
+  /*  lightBoxTitle.innerHTML = `<strong>${photo.title}</strong><br>${photo.details?.description || ""}`; */
+}
+
+function startLightBoxSlideshow() {
+  showLightBox(0);
+  lightBoxOverlay.style.visibility = "visible";
+  if (lightBoxInterval) clearInterval(lightBoxInterval);
+  lightBoxInterval = setInterval(() => {
+    lightBoxIndex = (lightBoxIndex + 1) % allPhotos.length;
+    showLightBox(lightBoxIndex);
+  }, 2000); // 2 seconds per photo
+}
+
+function closeLightBox() {
+  lightBoxOverlay.style.visibility = "hidden";
+  if (lightBoxInterval) clearInterval(lightBoxInterval);
+}
+
+closeBtn.addEventListener("click", closeLightBox);
+lightBoxOverlay.addEventListener("click", (e) => {
+  if (e.target === lightBoxOverlay) closeLightBox();
+});
+
+lightBox.addEventListener("click", () => {
+  if (allPhotos.length) {
+    startLightBoxSlideshow();
+  }
 });
