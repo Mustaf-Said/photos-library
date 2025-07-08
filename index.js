@@ -121,3 +121,43 @@ colorSwatches.forEach(swatch => {
     inptBC.style.backgroundColor = color;
   });
 });
+
+//play music 
+const musicIcons = document.querySelectorAll(".musicList");
+
+
+const musicPlay = [
+  document.querySelector("#musicPlay"),
+  document.querySelector("#musicPlay2"),
+  document.querySelector("#musicPlay3")
+];
+
+let currentlyPlayingIndex = null;
+
+musicIcons.forEach(icon => {
+  icon.addEventListener("click", (e) => {
+    const index = parseInt(e.currentTarget.getAttribute("data-index"), 10);
+    if (!isNaN(index)) {
+      if (currentlyPlayingIndex === index && !musicPlay[index].paused) {
+        musicPlay[index].pause();
+        currentlyPlayingIndex = null;
+      } else {
+        musicPlay.forEach((audio, i) => {
+          audio.pause();
+          audio.currentTime = 0;
+        });
+        musicPlay[index].play();
+        currentlyPlayingIndex = index;
+      }
+    }
+  });
+});
+
+// play musikicons
+const toggleIcon = document.getElementById("toggleIcon");
+const audioContainer = document.getElementById("audioContainer");
+
+
+toggleIcon.addEventListener("click", function () {
+  audioContainer.classList.toggle("toggle");
+});
