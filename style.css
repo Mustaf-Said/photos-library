@@ -1,9 +1,8 @@
 html,
 body {
   margin: 0;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 0;
   box-sizing: border-box;
-  background-color: rgb(183, 190, 204);
 }
 
 .container {
@@ -11,11 +10,9 @@ body {
   grid-template-rows: repeat(3, auto);
   grid-template-columns: 25% 45% 30%;
   grid-template-areas: 'aside main asidebar';
-  background-color: rgb(252, 253, 255);
-  border-radius: 5px;
-  margin: auto;
-  width: 79%;
-  height: auto;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 img {
@@ -25,59 +22,60 @@ img {
 aside {
   grid-area: aside;
   margin-left: 15px;
+}
 
-  h3 {
-    color: #333;
+aside h3 {
+  color: #333;
+}
+
+aside input {
+  width: 90%;
+  padding: 7px 0 7px 3px;
+  border-radius: 5px;
+  border: 1px solid rgb(209, 210, 211);
+  outline: none;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 5px;
+    margin: 13px 0;
+    cursor: pointer;
   }
 
-  input {
+  li:hover {
+    background-color: rgb(203, 214, 237);
     width: 90%;
-    padding: 7px 0 7px 3px;
     border-radius: 5px;
-    border: 1px solid rgb(209, 210, 211);
-    outline: none;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      padding: 5px;
-      margin: 13px 0;
-      cursor: pointer;
-    }
-
-    li:hover {
-      background-color: rgb(203, 214, 237);
-      width: 90%;
-      border-radius: 5px;
-    }
-
-    li:active {
-      font-weight: bold;
-      background-color: rgb(180, 199, 240);
-    }
+  li:active {
+    font-weight: bold;
+    background-color: rgb(180, 199, 240);
   }
 }
 
 main {
   grid-area: main;
   background-color: rgb(233, 235, 237);
+  height: 100vh;
+  box-shadow: -3px 0 6px -2px #939393, 3px 0 6px -2px #939393;
 
   .listHeader {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    margin: 0;
 
     li {
-      padding: 9px;
+      padding-right: 9px;
       opacity: 0.6;
     }
 
     li:last-child {
-      padding-top: 11px;
+      padding-top: 3px;
     }
 
     li:hover {
