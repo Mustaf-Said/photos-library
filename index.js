@@ -46,10 +46,10 @@ searchInput.addEventListener("input", function (e) {
 
 // Map activity class names to JSON paths
 const activityMap = {
-  sommarAk: '../jsonFile/sommarPhotos.json',
-  vinterAk: '../jsonFile/vinterPhotos.json',
-  hostAk: '../jsonFile/hostPhotos.json',
-  varAk: '../jsonFile/varPhotos.json'
+  sommarAk: 'jsonFile/sommarPhotos.json',
+  vinterAk: 'jsonFile/vinterPhotos.json',
+  hostAk: 'jsonFile/hostPhotos.json',
+  varAk: 'jsonFile/varPhotos.json'
 };
 
 // Load photos for a given activity
