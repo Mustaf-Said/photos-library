@@ -188,8 +188,37 @@ asidebar {
     overflow-y: scroll;
   }
 
-  .contianer {
+  /*   .contianer {
     min-width: 520px;
+  } */
+}
+
+@media screen and (max-width: 455px) {
+  .container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 25% 45% 30%;
+    grid-template-areas: 'aside main main';
+    min-width: 400px;
+    height: 100vh;
+  }
+
+  asidebar {
+    display: none;
+  }
+
+  aside {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+
+  aside input {
+    padding: 3px 0;
+  }
+
+  main img:hover {
+    transform: scale(1.5);
+    transition: transform 0.2s ease-in-out;
   }
 }
 
