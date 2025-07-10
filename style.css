@@ -215,6 +215,37 @@ asidebar {
     padding: 3px 0;
   }
 
+
+  img {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+  }
+
+  img:hover {
+    animation-name: grow-and-back;
+  }
+
+  @keyframes grow-and-back {
+    0% {
+      transform: scale(1);
+    }
+
+    20% {
+      transform: scale(1.5);
+
+    }
+
+    80% {
+      transform: scale(1.5);
+    }
+
+    100% {
+      transform: scale(1);
+
+    }
+  }
+
 }
 
 /* lightBox style */
@@ -238,7 +269,6 @@ asidebar {
   max-height: 80vh;
   border-radius: 8px;
   box-shadow: 0 0 30px #000;
-
 }
 
 .closeBtn {
