@@ -23,18 +23,29 @@ searchInput.addEventListener("input", function (e) {
     ul.appendChild(li);
     imgDetiales.innerHTML = `
         <img src="${photo.url}" alt="${photo.title}">
+      <br>
+      <p> <span>Title:</span> ${photo.title}</p>
+        
+       <p> <span> Läraren:</span> ${photo.details.photographer} </p>
+       
+        <p> <span> Datum:</span> ${photo.details.dateTaken} </p>
+          <br>
+       <p> <span>  Beskrivning:</span> ${photo.details.description} </p>
         <br>
-        Title: ${photo.title}
-        <br><br>
-        Description: ${photo.details.description}
       `;
     li.addEventListener("click", () => {
       imgDetiales.innerHTML = `
         <img src="${photo.url}" alt="${photo.title}">
+      <br>
+      <p> <span>Title:</span> ${photo.title}</p>
+        
+       <p> <span> Läraren:</span> ${photo.details.photographer} </p>
+       
+        <p> <span> Datum:</span> ${photo.details.dateTaken} </p>
+          <br>
+       <p> <span>  Beskrivning:</span> ${photo.details.description} </p>
         <br>
-        Title: ${photo.title}
-        <br><br>
-        Description: ${photo.details.description}
+       
       `;
       searchInput.value = ""
     });
@@ -46,7 +57,7 @@ searchInput.addEventListener("input", function (e) {
 
 // Map activity class names to JSON paths
 const activityMap = {
-  sommarAk: 'jsonFile/sommarPhotos.json',
+  boras: 'jsonFile/boras.json',
   vinterAk: 'jsonFile/vinterPhotos.json',
   hostAk: 'jsonFile/hostPhotos.json',
   varAk: 'jsonFile/varPhotos.json'
@@ -69,19 +80,29 @@ const loadPhotos = async (jsonPath) => {
     // display single big photo with details on right side.
     imgDetiales.innerHTML = `
         <img src="${photo.url}" alt="${photo.title}">
+      <br>
+      <p> <span>Title:</span> ${photo.title}</p>
+        
+       <p> <span> Läraren:</span> ${photo.details.photographer} </p>
+       
+        <p> <span> Datum:</span> ${photo.details.dateTaken} </p>
+          <br>
+       <p> <span>  Beskrivning:</span> ${photo.details.description} </p>
         <br>
-        Title: ${photo.title}
-        <br><br>
-        Description: ${photo.details.description}
       `;
     // display single big photo with details on right side efter clicked.
     li.addEventListener("click", () => {
       imgDetiales.innerHTML = `
         <img src="${photo.url}" alt="${photo.title}">
+      <br>
+      <p> <span>Title:</span> ${photo.title}</p>
+        
+       <p> <span> Läraren:</span> ${photo.details.photographer} </p>
+       
+        <p> <span> Datum:</span> ${photo.details.dateTaken} </p>
+          <br>
+       <p> <span>  Beskrivning:</span> ${photo.details.description} </p>
         <br>
-        Title: ${photo.title}
-        <br><br>
-        Description: ${photo.details.description}
       `;
       searchInput.value = ""
     });
@@ -105,7 +126,7 @@ Object.keys(activityMap).forEach(activityClass => {
 });
 
 // Optionally, load summer photos by default
-loadPhotos(activityMap.sommarAk);
+loadPhotos(activityMap.boras);
 
 // Färgklick – ändra bakgrund på details-panelen
 const colorSwatches = document.querySelectorAll(".color");
@@ -161,7 +182,6 @@ musicIcons.forEach(icon => {
 // play musikicons
 const toggleIcon = document.getElementById("toggleIcon");
 const audioContainer = document.getElementById("audioContainer");
-
 
 toggleIcon.addEventListener("click", function () {
   audioContainer.classList.toggle("toggle");
